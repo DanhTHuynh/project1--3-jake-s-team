@@ -4,6 +4,10 @@
 
 Student::Student() {
 	// TO BE COMPLETED
+	string cwid;
+	string courseName[size];
+	char grade[]size;
+	
 }
 
 Student::Student(const string &cwid) {
