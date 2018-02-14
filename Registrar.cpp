@@ -30,6 +30,9 @@ void Registrar::readTextfile(string filename) {
 // getStudent must throw an exception if cwid is invalid
 Student& Registrar::getStudent(string cwid) const {
 	// TO BE COMPLETED
+	string x;
+	cin >> x;
+	return x;
 }
 
 // process a line from the text file
