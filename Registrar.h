@@ -17,6 +17,9 @@ public:
 private:
 	// Add private member variables for your class along with any 
 	// other variables required to implement the public member functions
-	// TO BE COMPLETED
+
+	  Student* allStudents; // pointer
+    int size; // the population
+    int index; // the CWID
 
 };
