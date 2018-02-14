@@ -4,7 +4,6 @@
 
 Student::Student() {
 	// TO BE COMPLETED
-
 }
 
 Student::Student(const string &cwid) {
