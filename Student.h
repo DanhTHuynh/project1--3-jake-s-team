@@ -12,7 +12,9 @@ public:
 	void printTranscript(); // print transcript - see Student.cpp for the format
 	string getCWID(); // return the CWID of this student
 private:
-	// any private member variables and methods go here
-	// TO BE COMPLETED
+	string CWID;
+	string courseName[50];
+	char grade[50];
+	int courseCount;
 
 };
