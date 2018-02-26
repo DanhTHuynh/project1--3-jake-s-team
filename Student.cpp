@@ -3,40 +3,48 @@
 #include <iostream>
 
 Student::Student() {
-	// TO BE COMPLETED
-	string cwid;
-	string courseName[size];
-	char grade[]size;
-	
+	courseCount = 0;
+	cwid = "";
 }
 
 Student::Student(const string &cwid) {
-	// TO BE COMPLETED
-
+	this->cwid = cwid;
 }
 
 string Student::getCWID() {
-	// TO BE COMPLETED
-}
-
-void Student::addCourseGrade (const string &courseName, char grade) {
-	// TO BE COMPLETED
-
+	return cwid;
 }
 
 double Student::getGPA() {
-	// TO BE COMPLETED
-
+	double temp = 0.0;
+	for (int i = 0; i < courseCount; i++) {
+		switch (grade[i]) {
+		case 'A': temp += 4;
+			break;
+		case 'B': temp += 4;
+			break;
+		case 'C': temp += 4;
+			break;
+		case 'D': temp += 4;
+			break;
+		case 'F': temp += 4;
+			break;
+		}
+	}
+	return (double)temp / courseCount;
 }
 
-// print transcript in this (sample) format:
-// TRANSCRIPT FOR CWID=279750343
-// CS 121		C
-// CS 253		B
-// CS 131		B
-// GPA = 2.6667
-void Student::printTranscript() {
-	// TO BE COMPLETED
+void Student::addCourseGrade(const string &courseName, char grade) {
+	this->courseName[courseCount] = courseName;
+	this->grade[courseCount] = grade;
+	courseCount++;
+}
 
+void Student::printTranscript() {
+	cout << "TRANSCIPT FOR CWID = " << cwid << endl;
+	for (int i = 0; i < courseCount; i++) {
+		cout << courseName[i] << " " << grade[i] << endl;
+	}
+	cout << "GPA = " << getGPA() << endl;
 }
 

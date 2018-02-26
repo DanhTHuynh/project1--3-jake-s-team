@@ -26,18 +26,39 @@ void Registrar::readTextfile(string filename) {
 		throw invalid_argument("Could not open file " + filename);
 }
 
-// return Student object corresponding to a given CWID
-// getStudent must throw an exception if cwid is invalid
-Student& Registrar::getStudent(string cwid) const {
-	// TO BE COMPLETED
-	string x;
-	cin >> x;
-	return x;
+Registrar::Registrar() {
+	allStudents = new Student[50];
+	size = 0;
+}
+
+Registrar::Registrar(const Registrar &r) {
+	allStudents = new Student[50];
+	size = r.size; // copy
+	for (int i = 0; i < size; i++) {
+		allStudents[i] = r.allStudents[i];
+	}
+}
+
+Registrar& Registrar::operator = (const Registrar &r) {
+	size = r.size;
+	for (int i = 0; i < size; i++) {
+		allStudents[i] = r.allStudents[i];
+	}
+	return *this;
 }
 
 // process a line from the text file
 void Registrar::addLine(string courseName, string cwid, char grade) {
 	// TO BE COMPLETED
-
+	try {
+		// if not throw student exist
+		Student &a = getStudent(cwid);
+		a.addCourseGrade(courseName, grade); 
+	}
+	catch (exception &b) {
+		// if student does not exist create new one
+		allStudents[size] = Student(cwid);
+		allStudents[size].addCourseGrade(courseName, grade);
+		size++;
+	}
 }
-

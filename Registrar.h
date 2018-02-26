@@ -13,6 +13,9 @@ public:
 	Student& getStudent(string cwid) const; // return the Student object corresponding to a given CWID
 	// getStudent must throw an exception if cwid is invalid
 	// add constructors, destructors, assignment operators if needed
+	Registrar(); //counstructor, allocate memory and initializes to 0
+	Registrar(const Registrar &r); // copy
+	Registrar& operator = (const Registrar &r);
 
 private:
 	// Add private member variables for your class along with any 

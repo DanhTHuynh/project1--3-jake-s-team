@@ -14,5 +14,8 @@ public:
 private:
 	// any private member variables and methods go here
 	// TO BE COMPLETED
-
+	string cwid;
+	string courseName[50];
+	char grade[50];
+	int courseCount;
 };
