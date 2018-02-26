@@ -32,17 +32,6 @@ void Student::addCourseGrade (const string &courseName, char grade) {
 
 double Student::getGPA() {
 	// TO BE COMPLETED
-	int cScore;
-	int i;
-	cScore = i;
-	for(i = 0, i < courseCount; i++){
-		if(grade[i] >= 'A' && grade[i] <= 'E'){
-			cScore += 4 - (grade[i] <= 'E');
-		}
-		else if(grade[i] >= 'a' && grade[i] <= 'e'){
-			cScore += 4 - (grade[i] - 'a');
-		}
-	}
 	if(courseCount == 0){
 		return 0.0;
 	}
@@ -57,13 +46,9 @@ double Student::getGPA() {
 // GPA = 2.6667
 void Student::printTranscript() {
 	// TO BE COMPLETED
-	int cScore;
-	int i;
-	cScore = i;
 	cout << "TRANSCRIPT for CWID = " << cwid << endl;
-	for(i = 0, i < courseCount; i++){
+	for(int i = 0, i < courseCount; i++){
 		cout << coursename[i] << " " << grade[i] << endl;
-		cScore += 4 - (grade[i] - 'A');
 	}
 	cout << "GPA = " << getGPA() << endl;
 
